@@ -1,5 +1,13 @@
 import Image from 'next/image';
-export const metadata = { title: 'ABOUT — WEFT STUDIO' };
+import type { Metadata } from 'next';
+
+const description = 'WEFT STUDIOのものづくりへの想いと、ウェディングタペストリーの製品仕様をご紹介します。';
+export const metadata: Metadata = {
+  title: 'ABOUT',
+  description,
+  openGraph: { title: 'ABOUT — WEFT STUDIO', description },
+  twitter: { card: 'summary_large_image', title: 'ABOUT — WEFT STUDIO', description },
+};
 export default function AboutPage() {
   return (
     <>
