@@ -1,5 +1,13 @@
 import Link from 'next/link';
-export const metadata = { title: 'ORDER — WEFT STUDIO' };
+import type { Metadata } from 'next';
+
+const description = 'ウェディングタペストリーのプラン・料金・ご注文の流れ・よくある質問。テンプレートプラン¥9,800〜、フルカスタムプラン¥18,000〜。';
+export const metadata: Metadata = {
+  title: 'ORDER',
+  description,
+  openGraph: { title: 'ORDER — WEFT STUDIO', description },
+  twitter: { card: 'summary_large_image', title: 'ORDER — WEFT STUDIO', description },
+};
 const steps = [
   { num: '01', title: 'Instagram DM でご連絡', body: '@weft_studio へ「タペストリーについて相談したい」とDMをお送りください。' },
   { num: '02', title: 'ヒアリング', body: '写真・雰囲気・式の日程などをお聞きします。（DM上でのやりとり）' },

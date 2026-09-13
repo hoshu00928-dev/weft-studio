@@ -1,5 +1,13 @@
 import Image from 'next/image';
-export const metadata = { title: 'WORKS — WEFT STUDIO' };
+import type { Metadata } from 'next';
+
+const description = 'これまで手がけたウェディングタペストリーの作品ギャラリー。ナチュラル・モダン・クラシックなど様々なテイストをご覧いただけます。';
+export const metadata: Metadata = {
+  title: 'WORKS',
+  description,
+  openGraph: { title: 'WORKS — WEFT STUDIO', description },
+  twitter: { card: 'summary_large_image', title: 'WORKS — WEFT STUDIO', description },
+};
 const works = [
   { src: 'https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800&q=80', label: 'モノクロ写真 × シンプルタイポ' },
   { src: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80', label: 'ナチュラル × ボタニカル' },

@@ -3,12 +3,18 @@ import { Geist } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { SITE_NAME, SITE_DESCRIPTION, SITE_URL, OGP_IMAGE } from '@/lib/site';
 
 const geist = Geist({ variable: '--font-geist', subsets: ['latin'] });
 
+const title = `${SITE_NAME} — ふたりらしい式をつくる、タペストリー`;
+
 export const metadata: Metadata = {
-  title: 'WEFT STUDIO — ふたりらしい式をつくる、タペストリー',
-  description: 'ウェディングタペストリーのオーダー制作。写真とデザインで、あなただけの1枚を。全国配送対応。',
+  metadataBase: new URL(SITE_URL),
+  title: { default: title, template: `%s | ${SITE_NAME}` },
+  description: SITE_DESCRIPTION,
+  openGraph: { type: 'website', siteName: SITE_NAME, title, description: SITE_DESCRIPTION, images: [OGP_IMAGE], locale: 'ja_JP' },
+  twitter: { card: 'summary_large_image', title, description: SITE_DESCRIPTION, images: [OGP_IMAGE] },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
